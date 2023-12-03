@@ -65,10 +65,8 @@ function App() {
 
   return (
     <div className="container">
-      {Object.keys(formErrors).length === 0 && formSubmit ? (
+      {Object.keys(formErrors).length === 0 && formSubmit && (
         <div className="title">Uspješno ste se ulogirali</div>
-      ) : (
-        <div className="title">Ispunite formu</div>
       )}
       <form ref={form} onSubmit={handleSubmit}>
         <h1>Login Forma</h1>
@@ -99,7 +97,7 @@ function App() {
           <div className="field">
             <label>Password</label>
             <input
-              type="pass"
+              type="password"
               name="pass"
               placeholder="password"
               value={formValues.pass}
